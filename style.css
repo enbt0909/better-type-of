@@ -1,0 +1,118 @@
+:root {
+  --accent: #3730a3;
+  --bg-gradient-end: #f8fafc;
+  --bg-gradient-start: #e0e7ff;
+  --bg-light: #f8fafc;
+  --container-bg: #fff;
+  --container-radius: 16px;
+  --container-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --font-main: Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: 2rem;
+  --font-size-input: 1rem;
+  --font-size-output: 1.2rem;
+  --input-border: #c7d2fe;
+  --input-radius: 6px;
+  --output-color: #0f172a;
+  --primary: #6366f1;
+  --primary-dark: #4338ca;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: var(--font-size-base);
+  background-color: var(--bg-light);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  flex-direction: column;
+  background: var(--container-bg);
+  box-shadow: var(--container-shadow);
+  border-radius: var(--container-radius);
+}
+
+h1 {
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-h1);
+}
+
+input {
+  width: 320px;
+  outline: none;
+  padding: 0.75rem;
+  margin-right: 0.625rem;
+  transition: border 0.2s;
+  font-size: var(--font-size-input);
+  border-radius: var(--input-radius);
+  border: 1px solid var(--input-border);
+}
+
+input:focus {
+  border: 1.5px solid var(--primary);
+}
+
+button {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.75rem 1.375rem;
+  background: var(--primary);
+  transition: background 0.2s;
+  font-size: var(--font-size-input);
+  border-radius: var(--input-radius);
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+#output {
+  min-height: 1.5em;
+  font-weight: bold;
+  margin-top: 1.75rem;
+  letter-spacing: 0.5px;
+  color: var(--output-color);
+  font-size: var(--font-size-output);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  .container {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  input {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+    width: calc(100% - 22px);
+  }
+  button {
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+}
